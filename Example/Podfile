@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'FCVerticalMenu', :exclusive => true do
+  pod "FCVerticalMenu", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "FCVerticalMenu", :path => "../"
+
+  
+end

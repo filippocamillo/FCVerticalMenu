@@ -134,7 +134,7 @@
  *  @param view          the view container
  */
 - (void)showFromNavigationBar:(UINavigationBar*)navigationBar inView:(UIView *)view
-{
+{    
     [self showFromRect:navigationBar.frame inView:view];
     
     if (self.appearsBehindNavigationBar) {
@@ -303,7 +303,7 @@
  */
 - (CGFloat)totalHeight
 {
-    CGFloat navigationBarOffset = self.appearsBehindNavigationBar? 64 : 0;
+    CGFloat navigationBarOffset = [self navigationBarOffset];
     return _menuCollection.collectionViewLayout.collectionViewContentSize.height + navigationBarOffset + 60;
 }
 

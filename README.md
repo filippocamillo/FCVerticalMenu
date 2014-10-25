@@ -2,10 +2,7 @@
 
 A vertical menu animated and fully customizable.
 
-<img src="https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenuDemo.gif" alt="FCVerticalMenu Demo" width="320" height="568" />
-
-<img src="https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenu_demo.png" alt="FCVerticalMenu Screenshot" width="320" height="568" />
-
+<img src="https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenuDemo.gif" alt="FCVerticalMenu Demo" width="320" height="568" /> <img src="https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenu_demo.png" alt="FCVerticalMenu Screenshot" width="320" height="568" />
 
 ## Requirements
 

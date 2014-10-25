@@ -18,13 +18,11 @@
                     </toolbar>
                     <connections>
                         <segue destination="ORH-Qv-k3Q" kind="relationship" relationship="rootViewController" id="C1k-iW-MLI"/>
-                        <segue destination="Nqv-Jm-Jwq" kind="push" id="Xe7-jW-QR1"/>
-                        <segue destination="ALK-Mp-z4w" kind="push" id="lfW-6Y-ftW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaT-yy-O3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="-396"/>
+            <point key="canvasLocation" x="116" y="-784"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="SL8-DR-GRN">

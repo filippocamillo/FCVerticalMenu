@@ -7,8 +7,6 @@
 //
 
 #import "FCNavigationViewController.h"
-#import <FCVerticalMenu/FCVerticalMenu.h>
-
 #import "FCFirstViewController.h"
 #import "FCSecondViewController.h"
 
@@ -22,6 +20,11 @@
 {
     [super viewDidLoad];
     [self configureVerticalMenu];
+    self.verticalMenu.delegate = self;
+    
+    self.navigationBar.barStyle = UIBarStyleBlack;
+    self.verticalMenu.liveBlurBackgroundStyle = self.navigationBar.barStyle;    
+    self.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -114,6 +117,30 @@
     
     [_verticalMenu showFromNavigationBar:self.navigationBar inView:self.view];
 }
+
+
+#pragma mark - FCVerticalMenu Delegate Methods
+
+-(void)menuWillOpen:(FCVerticalMenu *)menu
+{
+    NSLog(@"menuWillOpen hook");
+}
+
+-(void)menuDidOpen:(FCVerticalMenu *)menu
+{
+    NSLog(@"menuDidOpen hook");
+}
+
+-(void)menuWillClose:(FCVerticalMenu *)menu
+{
+    NSLog(@"menuWillClose hook");
+}
+
+-(void)menuDidClose:(FCVerticalMenu *)menu
+{
+    NSLog(@"menuDidClose hook");
+}
+
 
 
 @end

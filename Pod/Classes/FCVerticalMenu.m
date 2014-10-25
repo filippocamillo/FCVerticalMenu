@@ -94,7 +94,6 @@
         for (FCVerticalMenuItem *anItem in self.items) {
             //do something with the item
             NSInteger index = [self.items indexOfObject:anItem];
-            NSLog(@"anItem at index: %li", (long)index);
             
             anItem.index = index;
             
@@ -179,7 +178,7 @@
     if (self.liveBlur) {
         self.toolbar = ({
             UIToolbar *toolbar = [[UIToolbar alloc] init];
-            toolbar.barStyle = UIBarStyleBlackTranslucent;
+            toolbar.barStyle = self.liveBlurBackgroundStyle;
             if ([toolbar respondsToSelector:@selector(setBarTintColor:)])
                 [toolbar performSelector:@selector(setBarTintColor:) withObject:self.liveBlurTintColor];
             toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth;

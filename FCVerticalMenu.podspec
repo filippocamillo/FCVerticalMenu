@@ -9,14 +9,14 @@
 
 Pod::Spec.new do |s|
 s.name             = "FCVerticalMenu"
-s.version          = "0.1.0"
+s.version          = "0.1.1"
 s.summary          = "A dropdown menu completely customizable"
 s.homepage         = "https://github.com/filippocamillo/FCVerticalMenu"
-# s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+s.screenshots      = "https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenu_demo.png", "https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenuDemo.gif"
 s.license          = 'MIT'
 s.author           = { "Filippo Camillo" => "hello@filippocamillo.com" }
 s.source           = { :git => "https://github.com/filippocamillo/FCVerticalMenu.git", :tag => s.version.to_s }
-# s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+s.social_media_url = 'https://twitter.com/filippocamillo'
 
 s.platform     = :ios, '7.0'
 s.requires_arc = true

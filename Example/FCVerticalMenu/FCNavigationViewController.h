@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FCVerticalMenu/FCVerticalMenu.h>
 
-@class FCVerticalMenu;
 
-@interface FCNavigationViewController : UINavigationController
+@interface FCNavigationViewController : UINavigationController <FCVerticalMenuDelegate>
 
 @property (strong, readonly, nonatomic) FCVerticalMenu *verticalMenu;
 

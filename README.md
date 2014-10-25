@@ -2,8 +2,7 @@
 
 A vertical menu animated and fully customizable.
 
-<img src="https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenuDemo.gif" alt="FCVerticalMenu Demo" width="320" height="568" /> <img src="https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenu_demo.png" alt="FCVerticalMenu Screenshot" width="375" height="667" />
-
+<img src="https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenu_demo.png" alt="FCVerticalMenu Screenshot" width="375" height="667" /> <img src="https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenuDemo.gif" alt="FCVerticalMenu Demo" width="320" height="568" /> 
 ## Requirements
 
 Xcode 6 or higher
@@ -117,6 +116,22 @@ You can customize the appearance of the menu:
 @property (assign, readwrite, nonatomic) BOOL liveBlur;
 @property (strong, readwrite, nonatomic) UIColor *liveBlurTintColor;
 @property (assign, readwrite, nonatomic) UIBarStyle liveBlurBackgroundStyle;
+```
+
+## Delegate Methods
+
+You can also take advantage of the delegate methods just implementing it. 
+
+Remember to adopt the delegate <FCVerticalMenuDelegate> in your controller and set the delegate with self.verticalMenu.delegate = self;
+
+``` objective-c
+@protocol FCVerticalMenuDelegate <NSObject>
+@optional
+-(void)menuWillOpen:(FCVerticalMenu *)menu;
+-(void)menuDidOpen:(FCVerticalMenu *)menu;
+-(void)menuWillClose:(FCVerticalMenu *)menu;
+-(void)menuDidClose:(FCVerticalMenu *)menu;
+@end
 ```
 
 ## Author

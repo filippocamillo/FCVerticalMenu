@@ -141,6 +141,4 @@
     NSLog(@"menuDidClose hook");
 }
 
-
-
 @end

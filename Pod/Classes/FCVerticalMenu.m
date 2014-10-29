@@ -69,6 +69,9 @@
 
         _menuCollection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:_menuLayout];
         [_menuCollection registerClass:[FCVerticalMenuItemCollectionViewCell class] forCellWithReuseIdentifier:@"menuItem"];
+        _menuCollection.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        
+
         _menuCollection.backgroundColor = [UIColor clearColor];
         _menuCollection.delegate = self;
         _menuCollection.dataSource = self;
@@ -140,7 +143,6 @@
         [view bringSubviewToFront:navigationBar];
     }
 }
-
 
 /**
  *  show the menu from the rect

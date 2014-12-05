@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "FCVerticalMenu"
-s.version          = "0.1.1"
+s.version          = "0.1.2"
 s.summary          = "A dropdown menu completely customizable"
 s.homepage         = "https://github.com/filippocamillo/FCVerticalMenu"
 s.screenshots      = "https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenu_demo.png", "https://github.com/filippocamillo/FCVerticalMenu/raw/master/FCVerticalMenuDemo.gif"

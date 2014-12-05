@@ -133,24 +133,33 @@
  */
 -(UIImage *)image:(UIImage *)img withColor:(UIColor *)color {
     if (color) {
-        // Construct new image the same size as this one.
-        UIImage *image;
-        UIGraphicsBeginImageContextWithOptions([img size], NO, 0.0); // 0.0 for scale means "scale for device's main screen".
-        CGRect rect = CGRectZero;
-        rect.size = [img size];
         
-        // tint the image
-        [img drawInRect:rect];
-        [color set];
-        UIRectFillUsingBlendMode(rect, kCGBlendModeMultiply);
+        UIGraphicsBeginImageContextWithOptions (img.size, NO, [[UIScreen mainScreen] scale]);
         
-        // restore alpha channel
-        [img drawInRect:rect blendMode:kCGBlendModeDestinationIn alpha:1.0f];
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGRect rect = CGRectMake(0, 0, img.size.width, img.size.height);
         
-        image = UIGraphicsGetImageFromCurrentImageContext();
+        //resolve CG/iOS coordinate mismatch
+        CGContextScaleCTM(context, 1, -1);
+        CGContextTranslateCTM(context, 0, -rect.size.height);
+        
+        //set the clipping area to the image
+        CGContextClipToMask(context, rect, img.CGImage);
+        
+        //set the fill color
+        CGContextSetFillColor(context, CGColorGetComponents(color.CGColor));
+        CGContextFillRect(context, rect);
+        
+        //blend mode overlay
+        CGContextSetBlendMode(context, kCGBlendModeOverlay);
+        
+        //draw the image
+        CGContextDrawImage(context, rect, img.CGImage);            
+        
+        UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+        return tintedImage;
         
-        return image;
     }
     
     return img;

@@ -420,11 +420,6 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     FCVerticalMenuItemCollectionViewCell *cell = (FCVerticalMenuItemCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-    
-    if ([cell isHighlighted])
-        [self collectionView:collectionView didDeselectItemAtIndexPath:indexPath];
-    else
-        [cell setHighlighted:YES];
   
     if (cell.theMenuItem.actionBlock) {
         cell.theMenuItem.actionBlock();
